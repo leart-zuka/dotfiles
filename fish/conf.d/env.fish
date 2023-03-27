@@ -1,0 +1,13 @@
+export MongoDbPassword=BrainixMongoDb2020
+export RabbitMQ_Password=BrainixRabitMQ2020
+export TaskServicePath=~/Titanom/logic/task-service/
+export TrainingCenterServicePath=~/Titanom/logic/trainingcenter-service/
+export JwtTokenKey=OxKZ3JaUfJQrnu-cdd-UgecARr3htu6IFjJiYWTXnbM
+export QT_PLUGIN_PATH=/usr/lib/qt/plugins/
+export QT_DEBUG_PLUGINS=1
+export AzureApiKey=244ae1570bb04133a610314b420c989b
+export BingSpellCheckerKey=1fb31c8716d546f28fdb0103e5637938
+export DeepLApiKey=bac2b755-b663-a404-940d-c5f406360d25:fx
+export JwtTokenKey=OxKZ3JaUfJQrnu-cdd-UgecARr3htu6IFjJiYWTXnbM
+export RapidApiKey=c244cd5475msh220abb37dd2f7cep1132adjsn3ae883919a3b
+export SerpApiKey=2effe0c8aac5e8c46db9806dca7274732ef6c1d7b38d8e10e1da24c446f1c64d

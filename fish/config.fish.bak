@@ -1,0 +1,21 @@
+starship init fish | source
+
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+alias nv="neovide"
+alias e="exit"
+alias ff="firefox"
+alias fucking="sudo"
+alias cd..="cd .."
+alias cl="clear"
+alias zu="zathura"
+alias gf="git fetch"
+alias gg="git pull"
+alias gs="git status"
+alias sp="sudo pacman"
+scheme set tomorrow-night-bright
+
+function fish_greeting
+    fortune | cowsay -f $(node -e "var c='tux'.split('  ');console.log(c[Math.floor(Math.random()*c.length)])") | lolcat --seed 0 --spread 1.0
+end
