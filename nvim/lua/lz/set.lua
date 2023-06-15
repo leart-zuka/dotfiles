@@ -26,6 +26,8 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+vim.opt.clipboard = 'unnamedplus'
+
 vim.g.mapleader = " "
 vim.keymap.set("n","<leader>q", vim.cmd.q)
 vim.keymap.set("n","<leader>w", vim.cmd.w)

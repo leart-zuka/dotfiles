@@ -84,6 +84,13 @@ _G.packer_plugins = {
     path = "/home/lz/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["doom-one.nvim"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\25colorscheme doom-one\bcmd\bvim\0" },
+    loaded = true,
+    needs_bufread = false,
+    path = "/home/lz/.local/share/nvim/site/pack/packer/opt/doom-one.nvim",
+    url = "https://github.com/NTBBloodbath/doom-one.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/lz/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -93,6 +100,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lz/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/lz/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -135,12 +147,6 @@ _G.packer_plugins = {
     path = "/home/lz/.local/share/nvim/site/pack/packer/start/nvterm",
     url = "https://github.com/NvChad/nvterm"
   },
-  ["one-dark"] = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme onedark\bcmd\bvim\0" },
-    loaded = true,
-    path = "/home/lz/.local/share/nvim/site/pack/packer/start/one-dark",
-    url = "https://github.com/olimorris/onedarkpro.nvim"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/lz/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -167,6 +173,11 @@ _G.packer_plugins = {
     path = "/home/lz/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["transparent.nvim"] = {
+    loaded = true,
+    path = "/home/lz/.local/share/nvim/site/pack/packer/start/transparent.nvim",
+    url = "https://github.com/xiyaowong/transparent.nvim"
+  },
   undotree = {
     loaded = true,
     path = "/home/lz/.local/share/nvim/site/pack/packer/start/undotree",
@@ -180,6 +191,13 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Setup for: doom-one.nvim
+time([[Setup for doom-one.nvim]], true)
+try_loadstring("\27LJ\2\n»\6\0\0\2\0\21\0M6\0\0\0009\0\1\0+\1\1\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\3\0006\0\0\0009\0\1\0+\1\1\0=\1\4\0006\0\0\0009\0\1\0+\1\2\0=\1\5\0006\0\0\0009\0\1\0+\1\1\0=\1\6\0006\0\0\0009\0\1\0+\1\1\0=\1\a\0006\0\0\0009\0\1\0+\1\1\0=\1\b\0006\0\0\0009\0\1\0)\1\20\0=\1\t\0006\0\0\0009\0\1\0+\1\2\0=\1\n\0006\0\0\0009\0\1\0+\1\1\0=\1\v\0006\0\0\0009\0\1\0+\1\1\0=\1\f\0006\0\0\0009\0\1\0+\1\2\0=\1\r\0006\0\0\0009\0\1\0+\1\2\0=\1\14\0006\0\0\0009\0\1\0+\1\2\0=\1\15\0006\0\0\0009\0\1\0+\1\2\0=\1\16\0006\0\0\0009\0\1\0+\1\2\0=\1\17\0006\0\0\0009\0\1\0+\1\2\0=\1\18\0006\0\0\0009\0\1\0+\1\2\0=\1\19\0006\0\0\0009\0\1\0+\1\1\0=\1\20\0K\0\1\0\28doom_one_plugin_lspsaga#doom_one_plugin_vim_illuminate%doom_one_plugin_indent_blankline\29doom_one_plugin_whichkey\29doom_one_plugin_startify\30doom_one_plugin_dashboard\30doom_one_plugin_nvim_tree\27doom_one_plugin_neogit\30doom_one_plugin_telescope\27doom_one_plugin_barbar\26doom_one_plugin_neorg#doom_one_pumblend_transparency\29doom_one_pumblend_enable$doom_one_transparent_background$doom_one_diagnostics_text_color\31doom_one_enable_treesitter\29doom_one_italic_comments\29doom_one_terminal_colors\29doom_one_cursor_coloring\6g\bvim\0", "setup", "doom-one.nvim")
+time([[Setup for doom-one.nvim]], false)
+time([[packadd for doom-one.nvim]], true)
+vim.cmd [[packadd doom-one.nvim]]
+time([[packadd for doom-one.nvim]], false)
 -- Config for: nvterm
 time([[Config for nvterm]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vnvterm\frequire\0", "config", "nvterm")
@@ -188,10 +206,10 @@ time([[Config for nvterm]], false)
 time([[Config for startup.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fstartup\frequire\0", "config", "startup.nvim")
 time([[Config for startup.nvim]], false)
--- Config for: one-dark
-time([[Config for one-dark]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme onedark\bcmd\bvim\0", "config", "one-dark")
-time([[Config for one-dark]], false)
+-- Config for: doom-one.nvim
+time([[Config for doom-one.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\25colorscheme doom-one\bcmd\bvim\0", "config", "doom-one.nvim")
+time([[Config for doom-one.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
