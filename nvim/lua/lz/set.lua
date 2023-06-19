@@ -29,5 +29,7 @@ vim.opt.updatetime = 50
 vim.opt.clipboard = 'unnamedplus'
 
 vim.g.mapleader = " "
-vim.keymap.set("n","<leader>q", vim.cmd.q)
-vim.keymap.set("n","<leader>w", vim.cmd.w)
+vim.keymap.set("n", "<leader>q", vim.cmd.q)
+vim.keymap.set("n", "<leader>w", vim.cmd.w)
+
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]

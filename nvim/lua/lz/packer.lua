@@ -107,4 +107,15 @@ use {
 
  use('xiyaowong/transparent.nvim')
 
+ use{
+     'm4xshen/autoclose.nvim',
+     config = function ()
+         require("autoclose").setup({
+             keys = {
+                 ["\'"] = { close = false, escape = true},
+             },
+         })
+     end
+ }
+
 end)
