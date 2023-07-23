@@ -2,7 +2,7 @@
 {
   "position": "top",
   "output": "DP-1",
-  "modules-left": ["custom/arch-pill", "cpu", "memory", "temperature"],
+  "modules-left": ["custom/arch-pill","wlr/workspaces", "cpu", "memory", "temperature"],
   "modules-center": ["custom/playerctl"],
   "modules-right": ["tray", "network", "pulseaudio", "clock"],
   // Modules configuration
@@ -10,6 +10,21 @@
     "format": "",
     "on-click": "rofi drun -show",
     "tooltip": false
+  },
+  "wlr/workspaces": {
+      "active-only": false,
+      "all-outputs": true,
+      "disable-scroll": false,
+      "on-scroll-up": "hyprctl dispatch workspace -1",
+      "on-scroll-down": "hyprctl dispatch workspace +1",
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+          "urgent": "",
+          "active": "",
+          "default": "󰧞",
+          "sort-by-number": true
+      },
   },
   "clock": {
     "format": "<span foreground='#cba6f7'> </span><span>{:%I:%M %p %a %d}</span>",
