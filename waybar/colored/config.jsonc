@@ -1,7 +1,6 @@
 // vim:set ft=jsonc:
 {
   "position": "top",
-  "output": "DP-1",
   "modules-left": ["custom/arch-pill","wlr/workspaces", "cpu", "memory", "temperature"],
   "modules-center": ["custom/playerctl"],
   "modules-right": ["tray", "network", "pulseaudio", "clock"],
