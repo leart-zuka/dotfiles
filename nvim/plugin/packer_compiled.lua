@@ -80,7 +80,7 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["autoclose.nvim"] = {
-    config = { "\27LJ\2\nj\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\tkeys\1\0\0\6'\1\0\0\1\0\2\nclose\1\vescape\2\nsetup\14autoclose\frequire\0" },
+    config = { "\27LJ\2\nj\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\tkeys\1\0\0\6'\1\0\0\1\0\2\vescape\2\nclose\1\nsetup\14autoclose\frequire\0" },
     loaded = true,
     path = "/home/lz/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
     url = "https://github.com/m4xshen/autoclose.nvim"
@@ -199,6 +199,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lz/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/home/lz/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
   }
 }
 
@@ -210,18 +215,6 @@ time([[Setup for doom-one.nvim]], false)
 time([[packadd for doom-one.nvim]], true)
 vim.cmd [[packadd doom-one.nvim]]
 time([[packadd for doom-one.nvim]], false)
--- Config for: nvterm
-time([[Config for nvterm]], true)
-try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vnvterm\frequire\0", "config", "nvterm")
-time([[Config for nvterm]], false)
--- Config for: doom-one.nvim
-time([[Config for doom-one.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\25colorscheme doom-one\bcmd\bvim\0", "config", "doom-one.nvim")
-time([[Config for doom-one.nvim]], false)
--- Config for: autoclose.nvim
-time([[Config for autoclose.nvim]], true)
-try_loadstring("\27LJ\2\nj\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\tkeys\1\0\0\6'\1\0\0\1\0\2\nclose\1\vescape\2\nsetup\14autoclose\frequire\0", "config", "autoclose.nvim")
-time([[Config for autoclose.nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n�\2\0\0\5\0\18\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\16\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\f\0=\4\r\0035\4\14\0=\4\15\3=\3\17\2B\0\2\1K\0\1\0\nsigns\1\0\1\15signcolumn\2\14untracked\1\0\1\ttext\b┆\17changedelete\1\0\1\ttext\6~\14topdelete\1\0\1\ttext\b‾\vdelete\1\0\1\ttext\6_\vchange\1\0\1\ttext\b│\badd\1\0\0\1\0\1\ttext\b│\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
@@ -230,6 +223,18 @@ time([[Config for gitsigns.nvim]], false)
 time([[Config for startup.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fstartup\frequire\0", "config", "startup.nvim")
 time([[Config for startup.nvim]], false)
+-- Config for: doom-one.nvim
+time([[Config for doom-one.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\25colorscheme doom-one\bcmd\bvim\0", "config", "doom-one.nvim")
+time([[Config for doom-one.nvim]], false)
+-- Config for: autoclose.nvim
+time([[Config for autoclose.nvim]], true)
+try_loadstring("\27LJ\2\nj\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\tkeys\1\0\0\6'\1\0\0\1\0\2\vescape\2\nclose\1\nsetup\14autoclose\frequire\0", "config", "autoclose.nvim")
+time([[Config for autoclose.nvim]], false)
+-- Config for: nvterm
+time([[Config for nvterm]], true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vnvterm\frequire\0", "config", "nvterm")
+time([[Config for nvterm]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

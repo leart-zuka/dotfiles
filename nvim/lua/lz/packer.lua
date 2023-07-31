@@ -2,17 +2,26 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
 
-    use {
+require("lazy").setup({
+    {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
-    }
-
-    use({
+    },
+    {
         'NTBBloodbath/doom-one.nvim',
         setup = function()
             -- Add color to cursor
@@ -48,25 +57,22 @@ return require('packer').startup(function(use)
         config = function()
             vim.cmd("colorscheme doom-one")
         end,
-    })
-
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-
-    use('nvim-treesitter/playground')
-
-    use('theprimeagen/harpoon')
-
-    use('mbbill/undotree')
-
-    use({
+    },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    },
+    'nvim-treesitter/playground',
+    'theprimeagen/harpoon',
+    'mbbill/undotree',
+    {
         "kdheepak/lazygit.nvim",
         -- optional for floating window border decoration
         requires = {
             "nvim-lua/plenary.nvim",
         },
-    })
-
-    use {
+    },
+    {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
         requires = {
@@ -85,35 +91,28 @@ return require('packer').startup(function(use)
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
             { 'L3MON4D3/LuaSnip' }, -- Required
         }
-    }
-
-    use {
+    },
+    {
         "NvChad/nvterm",
         config = function()
             require("nvterm").setup()
         end,
-    }
-
-    use {
+    },
+    {
         "startup-nvim/startup.nvim",
         requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
         config = function()
             require "startup".setup()
         end
-    }
-
-    use('nvim-tree/nvim-tree.lua')
-
-    use('nvim-tree/nvim-web-devicons')
-
-    use {
+    },
+    'nvim-tree/nvim-tree.lua',
+    'nvim-tree/nvim-web-devicons',
+    {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
-
-    use('xiyaowong/transparent.nvim')
-
-    use {
+    },
+    'xiyaowong/transparent.nvim',
+    {
         'm4xshen/autoclose.nvim',
         config = function()
             require("autoclose").setup({
@@ -122,9 +121,8 @@ return require('packer').startup(function(use)
                 },
             })
         end
-    }
-
-    use {
+    },
+    {
         'lewis6991/gitsigns.nvim',
         config = function()
             require('gitsigns').setup {
@@ -139,6 +137,6 @@ return require('packer').startup(function(use)
                 signcolumn = true,
             }
         end
-    }
-
-end)
+    },
+    "christoomey/vim-tmux-navigator",
+})
