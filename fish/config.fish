@@ -13,7 +13,7 @@ alias activate='source .venv/bin/activate.fish'
 alias pytest='python -m pytest'
 alias music='ncmpcpp'
 alias p='pnpm'
-alias nv='nvim'
+alias n='nvim'
 
 function ggg
   git add .
