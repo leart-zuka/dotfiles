@@ -14,9 +14,11 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.termguicolors = true
 
 -- Searching
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
