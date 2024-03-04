@@ -16,7 +16,7 @@ cd
 
 # Install all packages I need
 
-package_list=("alacritty" "btop" "clang" "cmake" "cuda" "discord" "docker" "dolphin" "dunst" "feh" "file" "fish" "fisher" "fmt" "gcc" "gimp" "gnome" "go" "grim" "grub" "hunspell" "hyprland" "iwd" "lf" "lua" "mpd" "neovim" "networkmanager" "nodejs" "npm" "nvidia-dkms" "nvidia-utils" "obs-studio" "openal" "opencl-nvidia" "openssh" "pavucontrol" "pipewire" "pnpm" "python" "qt5" "qt5-wayland" "qt6" "qt6-wayland" "ripgrep" "rofi" "ruby" "rust" "sqlite" "swaylock" "swww" "texlive" "thunderbird" "tmux" "nerd-fonts" "unzip" "waybar" "wayland" "webcord" "wireplumber" "wl-clipboard" "wofi" "xdg-desktop-portal-hyprland" "zathura")
+package_list=("alacritty" "btop" "clang" "cmake" "cuda" "discord" "docker" "dolphin" "dunst" "feh" "file" "fish" "fisher" "fmt" "gcc" "gimp" "gnome" "go" "grim" "grub" "hunspell" "hyprland" "iwd" "lf" "lua" "mpd" "neovim" "networkmanager" "nodejs" "npm" "nvidia-dkms" "nvidia-utils" "obs-studio" "openal" "opencl-nvidia" "openssh" "pavucontrol" "pipewire" "pnpm" "python" "qt5" "qt5-wayland" "qt6" "qt6-wayland" "ripgrep" "rofi" "ruby" "rust" "sqlite" "hyprlock" "swww" "texlive" "thunderbird" "tmux" "nerd-fonts" "unzip" "waybar" "wayland" "webcord" "wireplumber" "wl-clipboard" "wofi" "xdg-desktop-portal-hyprland" "zathura")
 packages=""
 for package in "${package_list[@]}"; do
     packages="${packages} ${package}"
