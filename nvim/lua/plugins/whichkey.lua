@@ -16,6 +16,7 @@ return {
                     name = "+file",
                     f = { "Find File" },
                     w = { "Find Word" },
+                    o = { "Old Files" },
                 },
                 l = {
                     name = "+latex",
@@ -24,8 +25,15 @@ return {
                 },
                 g = {
                     name = "+git",
-                    s = { "Open LazyGit" },
+                    l = { "Open LazyGit" },
+                    c = { "List commits with diff" },
+                    b = { "List all branches with log preview" },
+                    s = { "List current changes" },
                 },
+                f = {
+                    name = "+filebrowser",
+                    b = { "Open Filebrowser" },
+                }
             },
             ["<leader>w"] = { "<cmd>w<cr>", "Write File" },
             ["<leader>q"] = { "<cmd>q<cr>", "Quit Session" },
