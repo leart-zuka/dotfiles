@@ -33,6 +33,12 @@ return {
                 f = {
                     name = "+filebrowser",
                     b = { "Open Filebrowser" },
+                },
+                d = {
+                    name = "+debugger",
+                    c = { "Continue" },
+                    o = { "Toggle debugger" },
+                    b = { "Toggle breakpoint" },
                 }
             },
             ["<leader>w"] = { "<cmd>w<cr>", "Write File" },

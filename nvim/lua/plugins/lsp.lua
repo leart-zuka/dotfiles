@@ -6,6 +6,15 @@ return {
         { 'neovim/nvim-lspconfig' }, -- Required
         {                            -- Optional
             'williamboman/mason.nvim',
+            opts = {
+                ensure_installed = {
+                    "black",
+                    "mypy",
+                    "ruff",
+                    "pyright",
+                    "debugpy"
+                }
+            },
             run = function()
                 pcall(vim.cmd, 'MasonUpdate')
             end,
