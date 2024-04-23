@@ -24,6 +24,5 @@ end
 pyenv init - | source
 status --is-interactive; and pyenv virtualenv-init - | source
 starship init fish | source
-fnm env --use-on-cd | source
 function fish_greeting
 end
