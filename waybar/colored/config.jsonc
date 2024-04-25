@@ -1,7 +1,7 @@
 // vim:set ft=jsonc:
 {
   "position": "top",
-  "modules-left": ["custom/arch-pill","wlr/workspaces", "cpu", "memory", "temperature"],
+  "modules-left": ["custom/arch-pill", "cpu", "memory", "temperature"],
   "modules-center": ["custom/playerctl"],
   "modules-right": ["tray", "network", "pulseaudio", "clock"],
   // Modules configuration
@@ -26,15 +26,15 @@
       },
   },
   "clock": {
-    "format": "<span foreground='#cba6f7'> </span><span>{:%I:%M %p %a %d}</span>",
+    "format": "<span foreground='#cba6f7'> </span><span>{:%I:%M %p %a %d}</span>",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "<span foreground='#89dceb'> </span><span>{:%I:%M %p}</span>"
   },
   "cpu": {
-    "format": "<span foreground='#89b4fa'></span>  {usage}%"
+    "format": "<span foreground='#89b4fa'></span>  {usage}%"
   },
   "memory": {
-    "format": "<span foreground='#f5e0dc'></span> {}%",
+    "format": "<span foreground='#f5e0dc'></span> {}%",
     "on-click": "alacritty btop"
   },
   "temperature": {
@@ -55,7 +55,7 @@
   "pulseaudio": {
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "format": "<span size='13000' foreground='#fab387'></span>  {volume}%",
-    "format-muted": "<span size='14000'>ﱝ</span>",
+    "format-muted": "<span size='14000'></span>",
     "scroll-step": 10.0,
     "format-icons": {
       "headphone": "",
