@@ -1,19 +1,21 @@
 return {
-    "navarasu/onedark.nvim",
+    'navarasu/onedark.nvim',
+    lazy = false,
+    priority = 1000,
     init = function()
-        require('onedark').setup {
+        require('onedark').setup({
             style = 'deep',
-            highlights = {
-                DashboardHeader = { fg = '#91a3e3' },
-                DashboardKey = { fg = '#EA3C53' },
-                DashboardIcon = { fg = '#EA3C53' },
-                DashboardFooter = { fg = '#d8c8d5' },
-
-            }
-        }
+            hightlights = {
+                DashboardHeader = '#91A3E3',
+                DashboardKey = '#EA3C53',
+                DashboardIcon = '#EA3C53',
+                DashboardFooter = '#D8C8D5',
+            },
+        })
         require('onedark').load()
+        vim.cmd('highlight DashboardHeader guifg=#91a3e3')
+        vim.cmd('highlight DashboardKey guifg=#EA3C53')
+        vim.cmd('highlight DashboardIcon guifg=#EA3C53')
+        vim.cmd('highlight DashboardFooter guifg=#d8c8d5')
     end,
-    config = function()
-        vim.cmd([[colorscheme onedark]])
-    end
 }

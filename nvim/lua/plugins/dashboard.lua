@@ -57,7 +57,6 @@ return {
             button.desc = button.desc .. string.rep(" ", 43 - #button.desc)
             button.key_format = "  %s"
         end
-
         if vim.o.filetype == "lazy" then
             vim.cmd.close()
             vim.api.nvim_create_autocmd("User", {
