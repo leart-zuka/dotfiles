@@ -7,7 +7,7 @@
   // Modules configuration
   "custom/arch-pill": {
     "format": "",
-    "on-click": "rofi drun -show",
+    "on-click": "wofi --show=drun",
     "tooltip": false
   },
   "wlr/workspaces": {
