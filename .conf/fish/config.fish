@@ -21,8 +21,9 @@ function ggg
   git push
 end
 
-pyenv init - | source
-status --is-interactive; and pyenv virtualenv-init - | source
+# pyenv init - | source
+# status --is-interactive; and pyenv virtualenv-init - | source
 starship init fish | source
 function fish_greeting
+    pokeget random
 end
