@@ -2,13 +2,13 @@ window {
     margin: 0px;
     background-color: #282a36;
     border-radius: 30px;
-    border: 2px solid #bd93f9;
+    border: 2px solid #91A3E3;
 }
 
 #input {
     margin: 5px;
     border: none;
-    color: #FFFFFF;
+    color: #D8C8D5;
     background-color: #44475a;
     border-radius: 30px;
 }
@@ -34,8 +34,8 @@ window {
 #text {
     margin: 5px;
     border: none;
-    color: #bd93f9;
-} 
+    color: #EA3C53;
+}
 
 #entry:selected {
     background-color: #44475a;
