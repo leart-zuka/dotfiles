@@ -23,6 +23,7 @@ font pango:monospace 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+exec --no-startup-id xrandr -s 1920x1080
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -43,8 +44,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 #Control screen brightness doesn't really work doe but also doesn't mess with anything so I'ma leave it here
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 10%+ 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -54,10 +55,10 @@ bindsym $mod+Return exec alacritty
 
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # A more modern dmenu replacement is rofi:
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-7/launcher.sh
+bindsym $mod+d exec --no-startup-id rofi drun -show
 #bindsym $mod+p exec --no-startup-id ~/.config/rofi/powermenu/type-5/powermenu.sh
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
@@ -66,10 +67,7 @@ bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-7/launcher.sh
 bindsym $mod+t exec i3lock -t -i ~/Pictures/Guts_Skull_boi.png
 
 #Configure windows
-for_window [class=".*"] border pixel 1 #sets the border around each window to 1px for a very clean look
-smart_gaps on #doesn't do shit
-smart_borders on #dunno if it does shit
-hide_edge_borders smart_no_gaps #dunno if it does shit
+for_window [class=".*"] border pixel 1 
 
 # change focus
 bindsym $mod+h focus left
@@ -153,8 +151,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec i3-msg exit
 
@@ -188,10 +188,10 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # FUCK i3bar we in this bitch using polybar (I should prolly switch it out since it do be looking kinda whack ngl)
-exec_always --no-startup-id ~/.config/polybar/forest/launch.sh
+exec_always --no-startup-id polybar
 
 #Display Wallpaper
-exec_always feh --bg-fill ~/Pictures/Sakura.png
+exec_always feh --bg-fill ~/Pictures/nazuna_cool.png
 
 #Asign programs to workspaces; requires you to check the class of each program (Hint: it is not just the name of the program)
 for_window [class="firefox"] move to workspace $ws2
@@ -203,18 +203,20 @@ exec_always --no-startup-id autotiling
 exec --no-startup-id picom
 
 #start emacs client
-exec_always --no-startup-id "/usr/bin/emacs --daemon &"
+# exec_always --no-startup-id "/usr/bin/emacs --daemon &"
 
 #just a bunch of basic color settings
 
  # class                 border  backgr. text    indicator child_border
- client.focused          #2C2C2C #2C2C2C #ffffff #2e9ef4   #285577
+ client.focused          #fc123e #fc123e #ffffff #fc123e   #fc123e
  client.focused_inactive #2C2C2C #2C2C2C #ffffff #484e50   #5f676a
  client.unfocused        #333333 #222222 #888888 #292d2e   #222222
  client.urgent           #F7B45E #2C2C2C #ffffff #900000   #900000
  client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
  client.background       #ffffff
+
+gaps inner 5px
 
 #set keyboard layout to english us and switches caps with escape
 exec_always setxkbmap -layout us -option caps:swapescape
