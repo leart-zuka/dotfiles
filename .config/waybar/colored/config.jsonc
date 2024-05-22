@@ -1,0 +1,113 @@
+// vim:set ft=jsonc:
+{
+  "position": "top",
+  "modules-left": ["custom/arch-pill", "hyprland/workspaces","cpu", "memory", "temperature"],
+  "modules-center": ["custom/playerctl"],
+  "modules-right": ["tray", "network", "pulseaudio", "clock"],
+  // Modules configuration
+  "custom/arch-pill": {
+    "format": "",
+    "on-click": "wofi --show=drun",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"all-outputs": true,
+		"format-icons": {
+			"1": "一",
+			"2": "二",
+			"3": "三",
+			"4": "四",
+			"5": "五",
+			"6": "六",
+			"7": "七",
+			"8": "八",
+			"9": "九",
+			"10": "十"
+		},
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": [],
+			"10": []
+		}
+},
+  "clock": {
+    "format": "<span foreground='#cba6f7'> </span><span>{:%I:%M %p %a %d}</span>",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "<span foreground='#89dceb'> </span><span>{:%I:%M %p}</span>"
+  },
+  "cpu": {
+    "format": "<span foreground='#89b4fa'></span>  {usage}%"
+  },
+  "memory": {
+    "format": "<span foreground='#f5e0dc'></span> {}%",
+    "on-click": "alacritty btop"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "<span foreground='#eba0ac'></span> {temperatureC}°C"
+  },
+  "network": {
+    "format": "Loading",
+    "format-wifi": "{essid} ({signalStrength}%)",
+    "format-ethernet": "{ipaddr}/{cidr}",
+    "format-disconnected": "Disconnected",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "tooltip-format-wifi": "{essid}({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "~/.config/rofi/scripts/wifi"
+  },
+  "pulseaudio": {
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "format": "<span size='13000' foreground='#fab387'></span>  {volume}%",
+    "format-muted": "<span size='14000'></span>",
+    "scroll-step": 10.0,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["奔", "墳"]
+    },
+    "on-click-right": "pavucontrol"
+  },
+  "custom/cafeine": {
+    "format": "{icon}",
+    "return-type": "json",
+    "format-icons": {
+      "active": "<span foreground='#b4befe'></span>",
+      "inactive": "<span foreground='#cdd6f4'>󰒲</span>"
+    },
+    "interval": 5,
+    "exec": "~/.scripts/newm-cafeine"
+  },
+  "custom/playerctl": {
+    "format": "{icon}  <span>{}</span>",
+    "return-type": "json",
+    "max-length": 50,
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} ~ {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click-middle": "playerctl play-pause",
+    "on-click": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "format-icons": {
+      "Playing": "<span foreground='#94e2d5'></span>",
+      "Paused": "<span foreground='#f38ba8'></span>"
+    }
+  },
+  "tray": {
+    "icon-size": 10,
+    "reverse-direction": true,
+    "spacing": 6
+  }
+}
