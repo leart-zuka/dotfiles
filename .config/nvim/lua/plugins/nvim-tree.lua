@@ -25,14 +25,13 @@ return {
             },
             filters = {
                 dotfiles = false,
-                custom = { "^.git$", "^.idea$", "^.ipynb_checkpoints$", "^.venv$", "^__pycache__$", "^.bun$", "^.cache$", "^.cargo$", "^.ipython$", "^.java$", "^.jupyter$", "^.local$", "^.mozilla$", "^.npm$", "^.pki$", "^.pyenv$", "^.qutip$", "^.rdm$", "^.ssh$", "^.thunderbird$", "^.vscode-oss$" }
             },
             git = {
                 ignore = false,
             }
         })
 
-        vim.keymap.set('n', '<leader>e', '<Cmd>NvimTreeToggle<CR>', { silent = true })
-        vim.keymap.set('n', '<leader>o', '<Cmd>NvimTreeFocus<CR>', { silent = true })
+        vim.keymap.set('n','<leader>e','<Cmd>NvimTreeToggle<CR>', {silent=true})
+        vim.keymap.set('n','<leader>o','<Cmd>NvimTreeFocus<CR>', {silent=true})
     end
-}
+} 

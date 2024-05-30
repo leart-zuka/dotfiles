@@ -16,6 +16,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.termguicolors = true
 vim.g.neovide_transparency = 0.5
+
 -- Searching
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
