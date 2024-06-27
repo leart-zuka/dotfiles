@@ -41,7 +41,7 @@ return {
                 -- Using this option may slow down your editor, and you may see some duplicate highlights.
                 -- Instead of true it can also be a list of languages
                 -- additional_vim_regex_highlighting = false,
-                disable = { "latex", "fish" },
+                disable = { "latex", "markdown" },
                 additional_vim_regex_highlighting = { "latex", "markdown" },
             },
         }
