@@ -35,7 +35,7 @@ return {
                         col = "50%",
                     },
                     size = {
-                        width = 60,
+                        width = 30,
                         height = "auto",
                     },
                 },
@@ -60,7 +60,7 @@ return {
             },
         })
         require("notify").setup({
-            background_colour = "#000000",
+            background_colour = "",
         })
     end,
 }
