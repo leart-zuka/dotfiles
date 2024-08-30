@@ -1,8 +1,8 @@
+# Aliases
 alias ls='ls --color=auto'
 alias ff='firefox'
 alias e='exit'
 alias cd..='cd ..'
-alias black='~/.local/bin/black .'
 alias gg='git pull'
 alias gf='git fetch'
 alias gc='git checkout'
@@ -14,15 +14,32 @@ alias pytest='python -m pytest'
 alias music='ncmpcpp'
 alias p='pnpm'
 alias n='nvim'
+alias t="tmux"
+alias b="bun"
+alias oo="cd ~/Notes/"
 
+# Keybinds (TODO: figure out wtf these are for)
+bind \el ""
+bind \e\cl ""
+
+# Function to automatically add, commit, and push all files in current directory
 function ggg
   git add .
   git commit -m $argv
   git push
 end
 
-# pyenv init - | source
-# status --is-interactive; and pyenv virtualenv-init - | source
+# Function that calls yazi, and when quit automatically cd's to directory where yazi was last at
+function yy
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
+
+# Automatically sources venv when entering a directory that has it
 function __auto_source_venv --on-variable PWD --description "Activate/Deactivate virtualenv on directory change"
   status --is-command-substitution; and return
 
@@ -47,7 +64,12 @@ function __auto_source_venv --on-variable PWD --description "Activate/Deactivate
     end
 end
 
+# Starship
 starship init fish | source
 function fish_greeting
     pokeget random
 end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
