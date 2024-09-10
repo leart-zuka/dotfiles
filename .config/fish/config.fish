@@ -29,6 +29,20 @@ function ggg
   git push
 end
 
+# Function to move into notes dir, create notefile, and open it with nvim
+function oo
+    if test (count $argv) != 1
+        echo "Please only supply one file"
+    else
+        set prefix (date | awk '{print $3"_"$2"_"$7}')
+        set filename "$prefix"_"$argv.md"
+        cd $HOME/Documents/Notes/
+        touch $filename
+        nvim $filename
+    end
+
+end
+
 # Function that calls yazi, and when quit automatically cd's to directory where yazi was last at
 function yy
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
