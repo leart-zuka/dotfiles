@@ -32,9 +32,9 @@ return {
         lsp.preset('recommended')
 
         lsp.ensure_installed({
-            'tsserver',
             'eslint',
             'rust_analyzer',
+            'ts_ls',
         })
 
         local cmp = require('cmp')
@@ -68,7 +68,7 @@ return {
             vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
         end)
 
-        lsp.setup_servers({ 'tsserver', 'eslint', 'rust_analyzer' })
+        lsp.setup_servers({ 'ts_ls', 'eslint', 'rust_analyzer' })
         lsp.setup()
     end
 }

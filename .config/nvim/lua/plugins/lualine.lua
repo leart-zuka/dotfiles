@@ -186,10 +186,11 @@ return {
         }
 
         ins_right {
-            'fileformat',
-            fmt = string.upper,
-            icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+            function()
+                return ' '
+            end,
             color = { fg = colors.green, gui = 'bold' },
+            padding = { left = 1, right = 1 },
         }
 
         ins_right {
