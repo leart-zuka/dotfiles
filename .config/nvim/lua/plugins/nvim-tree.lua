@@ -31,7 +31,7 @@ return {
             }
         })
 
-        vim.keymap.set('n','<leader>e','<Cmd>NvimTreeToggle<CR>', {silent=true})
-        vim.keymap.set('n','<leader>o','<Cmd>NvimTreeFocus<CR>', {silent=true})
+        vim.keymap.set('n', '<leader>e', '<Cmd>NvimTreeToggle<CR>', { silent = true })
+        vim.keymap.set('n', '<leader>r', '<Cmd>NvimTreeFocus<CR>', { silent = true })
     end
-} 
+}

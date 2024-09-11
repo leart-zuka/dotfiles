@@ -39,6 +39,15 @@ return {
                     c = { "Continue" },
                     o = { "Toggle debugger" },
                     b = { "Toggle breakpoint" },
+                },
+                o = {
+                    name = "+obsidian",
+                    s = { "Search" },
+                    n = { "Insert Template" },
+                    p = {
+                        name = "+paste",
+                        i = "Image"
+                    }
                 }
             },
             ["<leader>w"] = { "<cmd>w<cr>", "Write File" },
