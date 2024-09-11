@@ -43,6 +43,12 @@ function oo
 
 end
 
+# Function to open up notes dir in nvim
+function on
+        cd $HOME/Documents/Notes/
+        nvim ./
+end
+
 # Function that calls yazi, and when quit automatically cd's to directory where yazi was last at
 function yy
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
