@@ -30,7 +30,7 @@ function ggg
 end
 
 # Function to move into notes dir, create notefile, and open it with nvim
-function oo
+function on
     if test (count $argv) != 1
         echo "Please only supply one file"
     else
@@ -44,7 +44,7 @@ function oo
 end
 
 # Function to open up notes dir in nvim
-function on
+function oo
         cd $HOME/Documents/Notes/
         nvim ./
 end
