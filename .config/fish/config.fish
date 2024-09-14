@@ -16,9 +16,8 @@ alias p='pnpm'
 alias n='nvim'
 alias t="tmux"
 alias b="bun"
-alias oo="cd ~/Notes/"
 
-# Keybinds (TODO: figure out wtf these are for)
+# Keybinds (Disable fish keybinds for ESC+L and ESC+Ctrl+L)
 bind \el ""
 bind \e\cl ""
 
@@ -45,8 +44,13 @@ end
 
 # Function to open up notes dir in nvim
 function oo
+    if test  -d $HOME/Documents/Notes/ 
         cd $HOME/Documents/Notes/
         nvim ./
+    else
+        echo "Notes dir doesn't exist, please create it first"
+        return 1
+    end
 end
 
 # Function that calls yazi, and when quit automatically cd's to directory where yazi was last at
