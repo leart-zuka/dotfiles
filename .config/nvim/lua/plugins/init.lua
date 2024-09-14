@@ -7,9 +7,12 @@ return {
     },
     {
         "norcalli/nvim-colorizer.lua",
-        init = function ()
+        init = function()
             require("colorizer").setup()
             vim.cmd([[ColorizerReloadAllBuffers]])
         end,
+    },
+    {
+        'echasnovski/mini.nvim', version = false
     }
 }

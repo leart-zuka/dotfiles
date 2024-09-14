@@ -12,7 +12,7 @@ return {
 
         vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
         vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
-        vim.keymap.set('n','<leader>ll','<Cmd>VimtexCompile<CR>', {silent=true})
-        vim.keymap.set('n','<leader>lv','<Cmd>VimtexView<CR>', {silent=true})
+        vim.keymap.set('n', '<leader>ll', '<Cmd>VimtexCompile<CR>', { silent = false })
+        vim.keymap.set('n', '<leader>lv', '<Cmd>VimtexView<CR>', { silent = false })
     end,
 }
