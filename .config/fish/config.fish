@@ -30,16 +30,26 @@ end
 
 # Function to move into notes dir, create notefile, and open it with nvim
 function on
-    if test (count $argv) != 1
-        echo "Please only supply one file"
+    if test (count $argv) -eq 0  
+        echo "Please a directory and a name for a file"
+        echo "usage: on \$dirname \$filename"
     else
-        set prefix (date | awk '{print $3"_"$2"_"$7}')
-        set filename "$prefix"_"$argv.md"
-        cd $HOME/Documents/Notes/
-        touch $filename
-        nvim $filename
+        if test (count $argv) -eq 1 
+            set prefix (date | awk '{print $3"_"$2"_"$7}')
+            set filename "$prefix"_"$argv.md"
+            cd $HOME/Documents/Notes/
+            touch $filename
+            nvim $filename
+        end
+        if test (count $argv) -eq 2
+            set prefix (date | awk '{print $3"_"$2"_"$7}')
+            set filename "$prefix"_"$argv[2]"
+            mkdir -p "$HOME/Documents/Notes/$argv[1]/"
+            cd $HOME/Documents/Notes/$argv[1]
+            touch $filename
+            nvim $filename
+        end
     end
-
 end
 
 # Function to open up notes dir in nvim
