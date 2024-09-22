@@ -43,7 +43,7 @@ function on
         end
         if test (count $argv) -eq 2
             set prefix (date | awk '{print $3"_"$2"_"$7}')
-            set filename "$prefix"_"$argv[2]"
+            set filename "$prefix"_"$argv[2].md"
             mkdir -p "$HOME/Documents/Notes/$argv[1]/"
             cd $HOME/Documents/Notes/$argv[1]
             touch $filename
