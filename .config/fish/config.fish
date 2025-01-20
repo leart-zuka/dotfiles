@@ -15,6 +15,8 @@ alias music='ncmpcpp'
 alias p='pnpm'
 alias n='nvim'
 alias t="tmux"
+alias tk="tmux kill-session"
+alias mipod="sudo mount /dev/sda2 /mnt"
 alias b="bun"
 
 # Keybinds (Disable fish keybinds for ESC+L and ESC+Ctrl+L)
