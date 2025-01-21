@@ -23,6 +23,20 @@ alias b="bun"
 bind \el ""
 bind \e\cl ""
 
+#Function to set fancontrol to certain percentage if provided in arguments, otherwise set to automatic fancontrol (for fw laptops)
+function fc
+     if test (count $argv) -eq 0
+             sudo ectool --interface=lpc autofanctrl
+         else
+             if test (count $argv) -eq 1
+                     sudo ectool --interface=lpc fanduty $argv
+                 else
+                     echo "Usage: fc [params]"
+                     echo -e 'params: \n\tnothing -> automatic fancontrol \n\tnumber -> fan speed in percent'
+             end
+end
+end
+
 # Function to automatically add, commit, and push all files in current directory
 function ggg
   git add .
