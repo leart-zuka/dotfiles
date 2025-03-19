@@ -8,6 +8,14 @@
 
   // ----------- MODULES CONFIG ------------
 
+  ///////////////// group: language ///////////////
+  "custom/keymap": {
+        "exec": "/home/lz/.config/scripts/get_keymap.sh",
+        "on-click": "/home/lz/.config/scripts/change_keymap.sh",
+        "format": "{text}",  
+        "interval": 1,
+  },
+
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 18,
@@ -21,9 +29,16 @@
   //////////// hyprland modules ////////////
 
   "hyprland/window": {
-    "format": "{initialTitle} - {title}",
-    "max-length": 35,
-    "all-outputs": true
+    "format": " {title}",
+    "max-length": 80,
+    "separate-outputs": false,
+    "rewrite": {
+      "^.*( Mozilla Firefox | Firefox )$": "󰈹 Firefox",
+      "^.*(LibreWolf)$": " LibreWolf",
+      "^.*n( .*|$)": " nvim",
+      "^.*~$": "󰄛 Kitty",
+      "(.*) ": " Empty"
+    },
   },
   "hyprland/workspaces": {
     "all-outputs": true,
@@ -55,8 +70,8 @@
       "playing": " ",
       "stopped": " "
     },
-    "tooltip-format": "{title} - {artist} | {length}",
-    "dynamic-order": ["title", "artist", "album", "position", "length"],
+    "tooltip-format": "{artist} - {title} | {length}",
+    "dynamic-order": ["artist", "title", "album", "position", "length"],
     "ignored-players": ["firefox", "zen-alpha"],
 
     "on-click": "playerctl play-pause",
@@ -71,7 +86,6 @@
   },
 
   "backlight": {
-    "scroll-step": 5,
     "format": "{icon} {percent}",
     "format-icons": ["󰃞 ", "󰃟 ", "󰃝 ", "󰃠 "]
   },
@@ -84,8 +98,7 @@
     "interval": 5,
     "tooltip-format-wifi": " {bandwidthDownBytes} |  {bandwidthUpBytes} | {essid}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "nm-connection-editor",
-    "on-click-right": "alacritty -e nmtui"
+    "on-click": "kitty nmtui"
   },
   "battery": {
     "states": {
@@ -138,7 +151,6 @@
     },
     "modules": [
       "custom/power",
-
       "custom/logout",
       "custom/suspend",
       "custom/reboot",
@@ -179,3 +191,4 @@
     "on-click": "loginctl terminate-session $XDG_SESSION_ID",
   },
 }
+
