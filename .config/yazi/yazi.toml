@@ -2,6 +2,15 @@
 show_hidden = true
 
 [opener]
+
 edit = [
 	{ run = 'nvim "$@"', block = true },
+]
+view = [
+    { run = 'librewolf "$@"', block = false},
+]
+
+[open]
+prepend_rules = [
+    {name = "*.pdf", use = "view"}
 ]
