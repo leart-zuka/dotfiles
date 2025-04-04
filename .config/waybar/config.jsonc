@@ -8,7 +8,7 @@
     "reload_style_on_change": true,
 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["mpris", "clock"],
+    "modules-center": ["clock"],
     "modules-right": [
       "tray",
       // "memory",

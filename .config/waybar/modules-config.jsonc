@@ -112,7 +112,8 @@
     "format-plugged": "{capacity} ",
     "format-alt": "{icon} {time}",
     "tooltip-format": "{capacity}%, about {time} left",
-    "format-icons": [" ", " ", " ", " "]
+    "format-icons": [" ", " ", " ", " "],
+    "interval": 1
   },
 
   "wireplumber": {
