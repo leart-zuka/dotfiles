@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export PYENV_ROOT:/home/lz/\x2epyenv
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
 SETUVAR _fisher_eth_2D_p_2F_fish_2D_plugin_2D_sudo_files:\x7e/\x2econfig/fish/functions/__ethp_commandline_toggle_sudo\x2efish\x1e\x7e/\x2econfig/fish/functions/sudo\x2efish\x1e\x7e/\x2econfig/fish/completions/sudo\x2efish
 SETUVAR _fisher_h_2D_matsuo_2F_fish_2D_color_2D_scheme_2D_switcher_files:\x7e/\x2econfig/fish/functions/__scheme_get_definition\x2efish\x1e\x7e/\x2econfig/fish/functions/__scheme_list\x2efish\x1e\x7e/\x2econfig/fish/functions/__scheme_preview\x2efish\x1e\x7e/\x2econfig/fish/functions/__scheme_set\x2efish\x1e\x7e/\x2econfig/fish/functions/scheme\x2efish\x1e\x7e/\x2econfig/fish/completions/scheme\x2efish
 SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:\x7e/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/autopair\x2efish
@@ -38,4 +38,4 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:cyan\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/lz/pycharm_builds/pycharm\x2d2023\x2e1/bin\x1e/home/lz/\x2epyenv/bin
+SETUVAR fish_user_paths:/home/lz/pycharm_builds/pycharm\x2d2023\x2e1/bin\x1e/home/lz/\x2epyenv/bin\x1e

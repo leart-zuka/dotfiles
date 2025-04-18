@@ -11,12 +11,13 @@ alias lz='lazygit'
 alias cl='clear'
 alias activate='source .venv/bin/activate.fish'
 alias pytest='python -m pytest'
-alias music='ncmpcpp'
+alias m='ncmpcpp'
 alias p='pnpm'
 alias n='nvim'
 alias t="tmux"
 alias tk="tmux kill-session"
-alias mipod="sudo mount /dev/sda2 /mnt"
+alias mipod="sudo mount /dev/sda2 /mnt && dunstify 'IPod is mounted'"
+alias um="sudo umount /mnt && dunstify 'Device is unmounted'"
 alias b="bun"
 
 # Keybinds (Disable fish keybinds for ESC+L and ESC+Ctrl+L)
