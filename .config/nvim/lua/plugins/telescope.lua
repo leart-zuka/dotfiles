@@ -41,7 +41,7 @@ return {
                     }
                 }
             }
-            vim.keymap.set('n', '<leader>fb', "<CMD>:Telescope file_browser path=%:p:h select_buffer=true<CR>", {})
+            vim.keymap.set('n', '<leader><leader>', "<CMD>Telescope file_browser path=%:p:h select_buffer=true<CR>", {})
         end
     }
 }
