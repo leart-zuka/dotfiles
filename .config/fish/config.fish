@@ -1,6 +1,6 @@
 # Aliases
 alias ls='ls --color=auto'
-alias ff='firefox'
+alias ff='librewolf'
 alias e='exit'
 alias cd..='cd ..'
 alias gg='git pull'
