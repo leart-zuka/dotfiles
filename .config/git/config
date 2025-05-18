@@ -1,0 +1,24 @@
+[user]
+	email = leart.zuka@web.de
+	name = Leart Zuka
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[core]
+    editor = "nvim"
+[help]
+    autocorrect = 1
+[diff]
+    context = 3
+    renames = copies
+    interHunkContext = 10
+[color "diff"]
+    meta = black bold
+    frag = magenta
+    context = white
+    whitespace = yellow reverse
+    old = red
+[commit]
+    template = "~/.config/git/template"
