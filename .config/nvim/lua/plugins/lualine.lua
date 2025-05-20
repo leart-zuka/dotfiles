@@ -18,6 +18,9 @@ return {
             magenta  = '#c678dd',
             blue     = '#51afef',
             red      = '#ec5f67',
+            normal   = '#d8c8d5',
+            write    = '#EA3C53',
+            visual   = '#91A3E3',
         }
 
         local conditions = {
@@ -95,9 +98,9 @@ return {
             color = function()
                 -- auto change color according to neovims mode
                 local mode_color = {
-                    n = colors.red,
-                    i = colors.green,
-                    v = colors.blue,
+                    n = colors.normal,
+                    i = colors.write,
+                    v = colors.visual,
                     [''] = colors.blue,
                     V = colors.blue,
                     c = colors.magenta,
