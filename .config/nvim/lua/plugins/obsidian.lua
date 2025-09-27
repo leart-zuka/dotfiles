@@ -20,10 +20,6 @@ return {
                 {
                     name = "Notes",
                     path = "$HOME/Documents/Notes/"
-                },
-                {
-                    name = "notes",
-                    path = "$HOME/Documents/uni/master/master_thesis/notes/"
                 }
             },
             templates = {

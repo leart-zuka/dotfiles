@@ -13,7 +13,7 @@ return {
                     "ruff",
                     "pyright",
                     "debugpy"
-                },
+                }
             },
             run = function()
                 pcall(vim.cmd, 'MasonUpdate')
@@ -28,7 +28,6 @@ return {
     },
     config = function()
         local lsp = require('lsp-zero')
-        local util = require('lspconfig/util')
 
         lsp.preset('recommended')
 
@@ -66,8 +65,9 @@ return {
             vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
             vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
             vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-            vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+            vim.keymap.set("n", "n", function() vim.lsp.buf.signature_help() end, opts)
         end)
+
         lsp.setup_servers({ 'ts_ls', 'eslint', 'rust_analyzer' })
         lsp.setup()
     end
