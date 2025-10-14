@@ -3,7 +3,7 @@ return {
     branch = 'v2.x',
     dependencies = {
         -- LSP Support
-        { 'neovim/nvim-lspconfig' }, -- Required
+        { 'neovim/nvim-lspconfig' ,tag = 'v2.5.0'}, -- Required
         {                            -- Optional
             'williamboman/mason.nvim',
             opts = {
@@ -31,12 +31,7 @@ return {
 
         lsp.preset('recommended')
 
-        lsp.ensure_installed({
-            'eslint',
-            'rust_analyzer',
-            'ts_ls',
-        })
-
+        
         local cmp = require('cmp')
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
         local cmp_mappings = lsp.defaults.cmp_mappings({
