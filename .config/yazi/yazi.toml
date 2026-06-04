@@ -1,16 +1,26 @@
-[manager]
+[mgr]
 show_hidden = true
+force_extension_rules = true
 
 [opener]
-
 edit = [
 	{ run = 'nvim "$@"', block = true },
 ]
-view = [
-    { run = 'librewolf "$@"', block = false},
+view_pdf = [
+    { run = "xdg-open %s", block = false},
+]
+
+view_image = [
+    { run = 'feh "$@"', block = false}
 ]
 
 [open]
 prepend_rules = [
-    {name = "*.pdf", use = "view"}
+    {url = "*.pdf", use = "view_pdf"},
+    {url = "*.PDF", use = "view_pdf"},
+    {url = "*.png", use = "view_image"},
+    {url = "*.jpg", use = "view_image"},
+    {url = "*.jpeg", use = "view_image"},
+    {url = "*.JPG", use = "view_image"},
+    {url = "*.svg", use = "view_image"},
 ]
