@@ -6,11 +6,9 @@ return {
         end
     },
     {
-        "norcalli/nvim-colorizer.lua",
-        init = function()
-            require("colorizer").setup()
-            vim.cmd([[ColorizerReloadAllBuffers]])
-        end,
+        "catgoose/nvim-colorizer.lua",
+        event = "BufReadPre",
+        opts = {},
     },
     {
         'echasnovski/mini.nvim', version = false
