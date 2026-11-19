@@ -18,7 +18,7 @@ tmux send-keys -t master_thesis:notes "cd ./notes; glow" C-m
 
 # Create code pane
 tmux new-window -t master_thesis -n code
-tmux send-keys -t master_thesis:code "cd ./code; n" C-m
+tmux send-keys -t master_thesis:code "cd ./code" C-m
 
 # Select literature pane
 tmux select-window -t master_thesis:literature
