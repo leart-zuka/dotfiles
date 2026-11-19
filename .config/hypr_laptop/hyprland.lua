@@ -30,6 +30,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal = "foot"
 local browser  = "waterfox"
+local mail     = "thunderbird"
 local menu     = "fuzzel"
 local lock     = "hyprlock"
 
@@ -267,6 +268,7 @@ hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "fullscreen" }))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd(mail))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd(lock))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("$HOME/.config/scripts/simple_screenshot.sh"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("$HOME/.config/scripts/change_keymap.sh"))
@@ -300,14 +302,20 @@ hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.5 @DEFAUL
     { locked = true, repeating = true })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
     { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 5%+"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+
+-- Screenshot selection
+hl.bind("F11", hl.dsp.exec_cmd("$HOME/.config/hypr/screenshot selection"), { locked = true })
+
+-- Suspend
+hl.bind("F12", hl.dsp.exec_cmd("systemctl suspend"), { locked = true })
 
 
 --------------------------------
