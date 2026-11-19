@@ -1,87 +1,59 @@
-set guioptions none
-set selection-clipboard clipboard
+set window-title-basename "true"
+set selection-clipboard "clipboard"
 
-map b adjust_window best-fit
+# Dracula color theme for Zathura
+# Swaps Foreground for Background to get a light version if the user prefers
+# To switch between backgrounds, use <C-r>
+
+
 #
-# #setup dark theme
-# set default-bg "#000000"
-# set default-fg "#F7F7F6"
-#
-# set statusbar-fg "#B0B0B0"
-# set statusbar-bg "#202020"
-#
-# set inputbar-bg "#151515"
-# set inputbar-fg "#FFFFFF"
-#
-# set notification-error-bg "#AC4142"
-# set notification-error-fg "#151515"
-#
-# set notification-warning-bg "#AC4142"
-# set notification-warning-fg "#151515"
-#
-# set highlight-color "#F4BF75"
-# set highlight-active-color "#6A9FB5"
-#
-# set completion-highlight-fg "#151515"
-# set completion-highlight-bg "#90A959"
-#
-# set completion-bg "#303030"
-# set completion-fg "#E0E0E0"
-#
-# set notification-bg "#90A959"
-# set notification-fg "#151515"
-#
-# set recolor "true"
-# set recolor-lightcolor "#000000"
-# set recolor-darkcolor "#E0E0E0"
-# set recolor-reverse-video "true"
-# set recolor-keephue "true"
+# Dracula color theme
 #
 
-set recolor true
+set notification-error-bg       rgba(255,85,85,1)     # Red
+set notification-error-fg       rgba(248,248,242,1)   # Foreground
+set notification-warning-bg     rgba(255,184,108,1)   # Orange
+set notification-warning-fg     rgba(68,71,90,1)      # Selection
+set notification-bg             rgba(40,42,54,1)      # Background
+set notification-fg             rgba(248,248,242,1)   # Foreground
 
-# Lighthaus Colors:
+set completion-bg               rgba(40,42,54,1)      # Background
+set completion-fg               rgba(98,114,164,1)    # Comment
+set completion-group-bg         rgba(40,42,54,1)      # Background
+set completion-group-fg         rgba(98,114,164,1)    # Comment
+set completion-highlight-bg     rgba(68,71,90,1)      # Selection
+set completion-highlight-fg     rgba(248,248,242,1)   # Foreground
 
-set notification-error-bg       "#FC2929" 
-set notification-error-fg       "#18191E" 
-set notification-warning-bg     "#E25600" 
-set notification-warning-fg     "#18191E" 
-set notification-bg             "#D68EB2" 
-set notification-fg             "#18191E" 
+set index-bg                    rgba(40,42,54,1)      # Background
+set index-fg                    rgba(248,248,242,1)   # Foreground
+set index-active-bg             rgba(68,71,90,1)      # Current Line
+set index-active-fg             rgba(248,248,242,1)   # Foreground
 
-set completion-bg               "#18191E" 
-set completion-fg               "#44B273" 
-set completion-group-bg         "#18191E" 
-set completion-group-fg         "#ED722E" 
-set completion-highlight-bg     "#FFFF00" 
-set completion-highlight-fg     "#21252D" 
+set inputbar-bg                 rgba(40,42,54,1)      # Background
+set inputbar-fg                 rgba(248,248,242,1)   # Foreground
+set statusbar-bg                rgba(40,42,54,1)      # Background
+set statusbar-fg                rgba(248,248,242,1)   # Foreground
 
-set index-bg                    "#18191E" 
-set index-fg                    "#44B273" 
-set index-active-bg             "#21252D" 
-set index-active-fg             "#FFFF00" 
+set highlight-color             rgba(255,184,108,0.5) # Orange
+set highlight-active-color      rgba(255,121,198,0.5) # Pink
 
-set inputbar-bg                 "#21252D" 
-set inputbar-fg                 "#FFFADE" 
-set statusbar-bg                "#21252D" 
-set statusbar-fg                "#D68EB2" 
-
-set highlight-color             "#D68EB2" 
-set highlight-active-color      "#ff79c6" 
-
-set default-bg                  "#18191E" 
-set default-fg                  "#FFEE79" 
+set default-bg                  rgba(40,42,54,1)      # Background
+set default-fg                  rgba(248,248,242,1)   # Foreground
 
 set render-loading              true
-set render-loading-fg           "#FFEE79" 
-set render-loading-bg           "#18191E" 
+set render-loading-fg           rgba(40,42,54,1)      # Background
+set render-loading-bg           rgba(248,248,242,1)   # Foreground
 
+#
 # Recolor mode settings
+#
 
-set recolor-lightcolor          "#21252D" 
-set recolor-darkcolor           "#FFFADE" 
+set recolor-lightcolor          rgba(40,42,54,1)      # Background
+set recolor-darkcolor           rgba(248,248,242,1)   # Foreground
 
-set statusbar-bg                "#073642" # base02
-set statusbar-fg                "#93a1a1" # base1
-set render-loading "false"
-
+#
+# Startup options
+#
+set adjust-open width
+set recolor false
+ 
