@@ -8,7 +8,7 @@
 
   // ----------- MODULES CONFIG ------------
 
-  ///////////////// group: language ///////////////
+  ///////////////// custom ///////////////
   "custom/keymap": {
         "exec": "/home/lz/.config/scripts/get_keymap.sh",
         "on-click": "/home/lz/.config/scripts/change_keymap.sh",
@@ -16,14 +16,15 @@
         "interval": 1,
   },
 
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 18,
-    "spacing": 3,
-    "tooltip-format": "{title}",
-    "on-click-middle": "close",
-    "on-click": "activate",
-    "ignore-list": ["Alacritty"]
+  "custom/todo": {
+      "format": "\u00a0{}",
+      "exec": "~/.config/waybar/scripts/todo/todo.sh",
+      "on-double-click": "~/.config/waybar/scripts/todo/todo.sh mark_done",
+      "on-click-right": "~/.config/waybar/scripts/todo/todo.sh open_tui",
+      "on-click-middle": "~/.config/waybar/scripts/todo/todo.sh middle_click",
+      "return-type": "json",
+      "interval": 5,
+      "tooltip": true
   },
 
   //////////// hyprland modules ////////////
@@ -36,10 +37,11 @@
       "^.*( Mozilla Firefox | Firefox )$": "󰈹 Firefox",
       "^.*(LibreWolf)$": " LibreWolf",
       "^.*n( .*|$)": " nvim",
-      "^.*~$": "󰄛 Kitty",
+      "^.*~$": "Terminal",
       "(.*) ": " Empty"
     },
   },
+
   "hyprland/workspaces": {
     "all-outputs": true,
     "warp-on-scroll": true,
@@ -106,10 +108,9 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}",
-    "format-full": "{icon}",
-    "format-charging": "{capacity} ",
-    "format-plugged": "{capacity} ",
+    "format": "{icon} {capacity}%",
+    "format-charging": "{capacity} ",
+    "format-plugged": "{capacity} ",
     "format-alt": "{icon} {time}",
     "tooltip-format": "{capacity}%, about {time} left",
     "format-icons": [" ", " ", " ", " "],

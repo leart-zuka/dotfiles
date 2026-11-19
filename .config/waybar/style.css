@@ -112,6 +112,7 @@ window#waybar.empty #window {
 #network,
 #battery,
 #custom-keymap,
+#custom-todo,
 #custom-power {
     padding: 0 5px;
     margin: 0 4px;
