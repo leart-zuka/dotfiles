@@ -1,13 +1,14 @@
 # Aliases
 alias ls='ls --color=auto'
-alias ff='librewolf'
+alias ff='zen-browser'
 alias e='exit'
+alias a="activate"
+alias cd="z"
 alias cd..='cd ..'
 alias gg='git pull'
 alias gf='git fetch'
 alias gc='git checkout'
 alias gs='git status'
-alias gl='git log --graph --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n"'
 alias lz='lazygit'
 alias cl='clear'
 alias activate='source .venv/bin/activate.fish'
@@ -17,9 +18,22 @@ alias p='pnpm'
 alias n='nvim'
 alias t="tmux"
 alias tk="tmux kill-session"
+alias tl="tmux list-session"
+alias ta="tmux a -d -t"
 alias mipod="sudo mount /dev/sda2 /mnt && dunstify 'IPod is mounted'"
 alias um="sudo umount /mnt && dunstify 'Device is unmounted'"
 alias b="bun"
+alias ssh_rp="ssh lz@192.168.65.224"
+alias mount_server="mount -t cifs //130.183.94.30/cavxadmin /mnt/lab_results/ -o username=cavxadmin,password=fiber9300"
+alias mount_one_note="mount -t cifs //130.183.94.30/cavxadmin/Labbooks/ ~/Documents/uni/master/one_note_shit/ -o username=cavxadmin,password=fiber9300"
+alias wq="wq_tmux.sh"
+alias mt="mt_tmux.sh"
+alias monitors="set_monitors_mpq.sh"
+
+alias ppps="powerprofilesctl set power-saver"
+alias ppb="powerprofilesctl set balanced"
+alias ppp="powerprofilesctl set performance"
+
 
 # Keybinds (Disable fish keybinds for ESC+L and ESC+Ctrl+L)
 bind \el ""
@@ -44,33 +58,6 @@ function ggg
   git add .
   git commit -m $argv
   git push
-end
-
-# Function to move into wiqi dir, start tmux with 3 panes, one for the local server, one for code editor, and one for lazygit
-function wq
-    if test -d $HOME/wq/
-        cd $HOME/wq/
-
-        tmux has-session -t wiqi 2>/dev/null; or tmux new-session -d -s wiqi -n bun
-
-        # Configure bun pane
-        tmux send-keys -t wiqi:0 "bun dev" C-m
-
-        # Create neovim pane
-        tmux new-window -t wiqi -n neovim
-        tmux send-keys -t wiqi:neovim "n" C-m
-
-        # Create the "lazygit" window with no command running
-        tmux new-window -t wiqi -n lazygit
-
-        # move to neovim window in the end
-        tmux select-window -t wiqi:neovim
-
-        # Switch to the tmux session
-        tmux attach-session -t wiqi
-    else
-        echo "Please check if wiqi dir exists and is named wq"
-    end
 end
 
 # Function to move into notes dir, create notefile, and open it with nvim
@@ -152,6 +139,5 @@ end
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
-
-# Some exports
-export MANPAGER='nvim +Man!'
+set -Ux EDITOR nvim
+zoxide init fish | source
