@@ -1,4 +1,3 @@
-
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -16,7 +15,7 @@ return {
         local cmp = require("cmp")
         local luasnip = require("luasnip")
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
- 
+
         cmp.setup({
             snippet = {
                 expand = function(args) luasnip.lsp_expand(args.body) end,
@@ -32,27 +31,28 @@ return {
                 { { name = "buffer" }, { name = "path" } }
             ),
         })
- 
+
         ---------------------------------------------------------------
         -- Settings shared by every server
         ---------------------------------------------------------------
         vim.lsp.config("*", {
             capabilities = require("cmp_nvim_lsp").default_capabilities(),
         })
- 
+
         -- Servers to start. Each binary must be on PATH (installed via Nix).
         vim.lsp.enable({
-            "pyright",        -- Python types/navigation
-            "ruff",           -- Python linting/formatting
-            "ts_ls",          -- TypeScript/JavaScript
+            "pyright", -- Python types/navigation
+            "ruff",    -- Python linting/formatting
+            "ts_ls",   -- TypeScript/JavaScript
             "eslint",
             "rust_analyzer",
-            "lua_ls",         -- Lua (your nvim config)
-            "nixd",           -- Nix (your dotfiles)
+            "lua_ls", -- Lua (your nvim config)
+            "nixd",   -- Nix (your dotfiles)
+            "clangd",
         })
- 
+
         vim.diagnostic.config({ virtual_text = true })
- 
+
         ---------------------------------------------------------------
         -- Keymaps, set whenever a server attaches to a buffer
         ---------------------------------------------------------------
@@ -72,4 +72,3 @@ return {
         })
     end,
 }
-

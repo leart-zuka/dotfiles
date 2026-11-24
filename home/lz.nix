@@ -76,6 +76,7 @@ in
     nodejs                         # markdown-preview, ts tooling
     lua-language-server
     nixd
+    clang-tools
     (python3.withPackages (ps: [ ps.debugpy ]))   # nvim-dap-python
   ];
  
