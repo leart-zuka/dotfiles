@@ -16,7 +16,7 @@
         ./hosts/jinxos/configuration.nix
 	home-manager.nixosModules.home-manager
 	{
-	  home-manager.userGlobalPkgs = true;
+	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
 	  home-manager.backupFileExtension = "bak";
 	  home-manager.users.lz = import ./home/lz.nix;
