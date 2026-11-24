@@ -74,6 +74,8 @@ in
     rust-analyzer
     gcc                            # nvim-treesitter compiles parsers
     nodejs                         # markdown-preview, ts tooling
+    lua-language-server
+    nixd
     (python3.withPackages (ps: [ ps.debugpy ]))   # nvim-dap-python
   ];
  
