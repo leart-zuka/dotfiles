@@ -62,6 +62,7 @@ in
     git-lfs                    # your git config uses the lfs filter
     pokeget-rs
     zoxide
+    uv
  
     # Neovim: LSPs/tools from Nix instead of Mason (Mason binaries rarely run on NixOS)
     pyright
