@@ -29,7 +29,7 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal = "foot"
-local browser  = "waterfox"
+local browser  = "firefox"
 local mail     = "thunderbird"
 local menu     = "fuzzel"
 local lock     = "hyprlock"
@@ -45,8 +45,7 @@ local lock     = "hyprlock"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
-    hl.exec_cmd("dunst & polkit-kde-agent & waybar & fctix5")
-    hl.exec_cmd("start_ags.sht")
+    hl.exec_cmd("dunst & waybar & fctix5")
     hl.exec_cmd("hyprpaper")
 end)
 
