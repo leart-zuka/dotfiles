@@ -59,7 +59,7 @@
   "memory": {
     "format": "  {percentage}%",
     "interval": 5,
-    "on-click": "alacritty -e btop"
+    "on-click": "foot -e btop"
   },
 
   "mpris": {
