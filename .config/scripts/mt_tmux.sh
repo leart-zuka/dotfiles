@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 path="$HOME/Documents/uni/master/master_thesis/"
 

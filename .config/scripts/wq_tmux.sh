@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 [[ ! -d "$HOME/wq" ]] && echo "Please check if wiqi dir exists and is named wq" && exit 1
 

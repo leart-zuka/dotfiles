@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 VENV_DIR="$HOME/.pycalc_venv"
 

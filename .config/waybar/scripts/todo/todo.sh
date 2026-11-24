@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Directory and file paths
 TODO_DIR="$HOME/.config/waybar/scripts/todo"

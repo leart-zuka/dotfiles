@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 monitor1=$(hyprctl monitors | grep "DP-10")
 monitor2=$(hyprctl monitors | grep "DP-11")
