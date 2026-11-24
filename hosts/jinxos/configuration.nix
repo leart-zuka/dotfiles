@@ -33,8 +33,14 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings.LC_TIME = "de_DE.UTF-8";
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+  };
     
   console.keyMap = "us";
+
+  fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
