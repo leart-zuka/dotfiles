@@ -40,7 +40,10 @@
     
   console.keyMap = "us";
 
-  fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+  fonts.packages = [ 
+    pkgs.nerd-fonts.jetbrains-mono 
+    pkgs.nerd-fonts.iosevka
+  ];
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
@@ -105,6 +108,7 @@
     waybar
     whatsapp-electron
     wl-clipboard
+    tmux
   ];
 
   virtualisation.docker.enable = true;
