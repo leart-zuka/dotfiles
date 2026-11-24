@@ -45,6 +45,7 @@ local lock     = "hyprlock"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
+    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 17")
     hl.exec_cmd("dunst & waybar & fctix5")
     hl.exec_cmd("hyprpaper")
 end)
