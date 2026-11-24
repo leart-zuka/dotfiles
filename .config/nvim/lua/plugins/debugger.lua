@@ -24,7 +24,7 @@ return {
         vim.keymap.set("n", "<leader>do", function()
             require("dapui").toggle()
         end, { noremap = true })
-        local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+        local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python3"
         require("dap-python").setup(path)
     end
 }
